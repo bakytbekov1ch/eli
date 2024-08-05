@@ -13,6 +13,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/basket/:id" element={<BasketPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          {/* <h1>Hello My World</h1> */}
         </Route>
       </Routes>
     </div>
