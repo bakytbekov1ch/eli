@@ -1,13 +1,14 @@
 import React from "react";
 
 import "./Admin.scss";
+import AdminInput from "../AdminInput/AdminInput";
+import AdminPro from "../AdminPro/AdminPro";
 
 function Admin() {
   return (
     <div className="admin">
-      <div className="container">
-        <div className="admin__content">Admin</div>
-      </div>
+      <AdminInput />
+      <AdminPro />
     </div>
   );
 }

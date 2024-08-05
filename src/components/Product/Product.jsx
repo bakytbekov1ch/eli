@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-
 import axios from "axios";
 import "./Product.scss";
+import { useNavigate } from "react-router-dom";
 
 const API = "https://668f6b7480b313ba09180a62.mockapi.io/chuncurchakKg";
 
 function Product() {
   const [value, setValue] = useState([]);
+  const navigate = useNavigate();
 
   async function handleClick() {
     try {
       const res = await axios.get(API);
-
       console.log(res);
       setValue(res.data);
     } catch (error) {
@@ -35,9 +35,11 @@ function Product() {
                 <h3>{item.farm}</h3>
                 <div className="product__mx">
                   <h4>{item.weight}</h4>
-                  <h4>{item.price}  сом</h4>
+                  <h4>{item.price} сом</h4>
                 </div>
-                <button>Корзина</button>
+                <button onClick={() => navigate(`/basket/${item.id}`)}>
+                  Просмотрет
+                </button>
               </div>
             </div>
           ))}
